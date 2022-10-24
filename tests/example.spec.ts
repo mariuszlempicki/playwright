@@ -1,28 +1,7 @@
-import { test } from "@playwright/test";
-test('basic test', async () => {
-  const browser = await test.launch({
-    headless: false
-  });
-  const context = await browser.newContext({
-    recordVideo: {
-      dir: "./videos/",
-      size: {
-        width: 800,
-        height: 600
-      }
-    }
-  });
+import { test, expect } from '@playwright/test';
 
-  // Open new page
-  const page = await context.newPage();
+test('basic test', async ({ page }) => {
   await page.goto('https://playwright.dev/');
   await page.locator('text=Get started').click();
   await expect(page).toHaveTitle(/Installation/);
-
-  // Close page
-  await page.close();
-
-  // ---------------------
-  await context.close();
-  await browser.close();
 });
