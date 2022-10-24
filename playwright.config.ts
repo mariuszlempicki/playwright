@@ -43,8 +43,8 @@ const config: PlaywrightTestConfig = {
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     video: {
-      mode: 'on',
-      size: { width: 800, height: 600 }
+      mode: 'on-first-retry',
+      size: { width: 1920, height: 1080 }
     }
   },
 
