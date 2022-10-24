@@ -6,15 +6,15 @@
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/darinpope/jenkins-example-playwright.git"
+    "url": "git+https://github.com/mariuszlempicki/playwright.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/darinpope/jenkins-example-playwright/issues"
+    "url": "https://github.com/mariuszlempicki/playwright/issues"
   },
-  "homepage": "https://github.com/darinpope/jenkins-example-playwright#readme",
+  "homepage": "https://github.com/mariuszlempicki/playwright#readme",
   "devDependencies": {
     "@playwright/test": "^1.17.2"
   }
