@@ -4,5 +4,6 @@ test('basic test', async ({ page }) => {
   await page.goto('https://playwright.dev/');
   await page.locator('text=Get started').click();
   await expect(page).toHaveTitle(/Installation/);
+  console.log(await page.video().path());
   await page.close();
 });
