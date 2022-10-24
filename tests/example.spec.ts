@@ -1,15 +1,28 @@
-import { test, expect } from '@playwright/test';
-const config: test = {
-  use: {
-    video: {
-      mode: 'on-first-retry',
-      size: { width: 640, height: 480 }
+import { chromium } from "playwright";
+test('basic test', async () => {
+  const browser = await chromium.launch({
+    headless: false
+  });
+  const context = await browser.newContext({
+    recordVideo: {
+      dir: "./videos/",
+      size: {
+        width: 800,
+        height: 600
+      }
     }
-  },
-};
-export default config;
-test('basic test', async ({ page }) => {
+  });
+
+  // Open new page
+  const page = await context.newPage();
   await page.goto('https://playwright.dev/');
   await page.locator('text=Get started').click();
   await expect(page).toHaveTitle(/Installation/);
+
+  // Close page
+  await page.close();
+
+  // ---------------------
+  await context.close();
+  await browser.close();
 });
